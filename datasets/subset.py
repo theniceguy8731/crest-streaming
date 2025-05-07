@@ -142,7 +142,7 @@ class SubsetGenerator:
             preds -= np.eye(class_num)[targets[idx]]
 
         return preds, pred_time
-
+#####################################################################################
     def generate_subset(
         self,
         preds,
@@ -203,7 +203,7 @@ class SubsetGenerator:
             weight = np.array(weight)
 
         return subset, weight, ordering_time, similarity_time
-
+#####################################################################################
 
 class WeightedSubset(Dataset):
     r"""

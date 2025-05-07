@@ -4,7 +4,7 @@ def get_exp_name(args):
     grd += f"-batchnummul{args.batch_num_mul}-interalmul{args.interval_mul}"           
     grd += f"_thresh-factor{args.check_thresh_factor}"
     folder = f"/{args.dataset}"
-    args.save_dir += f"{folder}_{args.arch}_lr{args.lr}"
+    args.save_dir += f"{folder}_ResNet20_lr{args.lr}"
     if args.warm_start_epochs > 0:
         args.save_dir += f"_warm-{args.warm_start_epochs}"
     subset_size = args.train_frac
@@ -17,6 +17,6 @@ def get_exp_name(args):
         args.save_dir += f"_coreset" if args.approx_with_coreset else f"_subset"
         args.save_dir += f"_momentum" if args.approx_moment else f""
 
-    args.save_dir += f'_seed_{args.seed}'
+    args.save_dir += f'_seed_42'
 
     return args.save_dir

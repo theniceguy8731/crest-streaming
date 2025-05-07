@@ -57,6 +57,8 @@ class FacilityLocation:
                 self.norm * math.log(1 + self.f_norm * self.D[:, ndx].sum())
                 - self.curVal
             )
+        
+    '''self.norm* math.log(1 + self.f_norm * (np.maximum(self.curMax, self.D[:, ndx]).sum() - self.gamma * self.D[sset + [ndx]][:, sset + [ndx]].sum())) - self.curVal'''
 
     def add(self, sset, ndx):
         cur_old = self.curVal
@@ -156,6 +158,8 @@ def similarity(X, metric):
         m = np.max(dists)
         S = m - dists
         L0 = m * len(dists)
+    elif metric=="abcd":
+        pass
     else:
         raise ValueError(f"unknown metric: {metric}")
 
